@@ -1,8 +1,8 @@
-1. Créez la base de données SomeCompany à l’aide d’une requête, ajoutez une condition sur l'existence de SomeCompany.
+"1. Créez la base de données SomeCompany à l’aide d’une requête, ajoutez une condition sur l'existence de SomeCompany."
 
 CREATE DATABASE IF NOT EXISTS SomeCompany;
 
-2. Créez la table Employees.
+"2. Créez la table Employees."
 
 CREATE TABLE IF NOT EXISTS Employees (
     employee_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS Employees (
     department_id INT
 );
 
-3. Créez la table Departments.
+"3. Créez la table Departments."
 
 CREATE TABLE IF NOT EXISTS Departments (
     department_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS Departments (
     location VARCHAR(255) NOT NULL
 );
 
-4. Insérez 6 à 9 nouveaux employés dans la table Employees.
+"4. Insérez 6 à 9 nouveaux employés dans la table Employees."
 
 INSERT INTO Employees (first_name, last_name, birhdate, position, department_id)
 VALUES
@@ -36,23 +36,23 @@ VALUES
 ('Olivia', 'Garcia', '1984-07-22', 'Marketing Manager', 2),
 ('Emilia', 'Clark', '1986-01-12', 'HR Manager', 3);
 
-5. Récupérez le nom et le poste de tous les employés.
+"5. Récupérez le nom et le poste de tous les employés."
 
 SELECT first_name, last_name, position FROM Employees;
 
-6. Mettez à jour le poste d’un employé dans la table Employees.
+"6. Mettez à jour le poste d’un employé dans la table Employees."
 
 UPDATE Employees SET position = 'Senior Software Engineer' WHERE employee_id = 1;
 
-7. Supprimez un employé de la table Employees.
+"7. Supprimez un employé de la table Employees."
 
 DELETE FROM Employees WHERE employee_id = 9;
 
-8. Affichez le nom, le département et le bureau de chaque employé.
+"8. Affichez le nom, le département et le bureau de chaque employé."
 
 SELECT first_name, last_name, department_name, location FROM Employees;
 
-9. Affichez, à l’aide d’un filtre, les membres de l’équipe IT, puis le management, puis les ressources humaines.
+"9. Affichez, à l’aide d’un filtre, les membres de l’équipe IT, puis le management, puis les ressources humaines."
 
 SELECT first_name, last_name, department_name, location FROM Employees WHERE department_id = 1;
 
@@ -60,16 +60,16 @@ SELECT first_name, last_name, department_name, location FROM Employees WHERE dep
 
 SELECT first_name, last_name, department_name, location FROM Employees WHERE department_id = 3;
 
-10. Affichez les départements de SomeCompany dans l’ordre alphabétique, avec les managers respectifs de chaque département.
+"10. Affichez les départements de SomeCompany dans l’ordre alphabétique, avec les managers respectifs de chaque département."
 
 SELECT department_name, FROM Departments INNER JOIN Employees ON Departments.department_head = Employees.employee_id ORDER BY department_name;
 
-11.Ajoutez un nouveau département à la table Department (Marketing peut-être?), ajoutez ou mettez à jour les employés de ce nouveau département.
+"11.Ajoutez un nouveau département à la table Department (Marketing peut-être?), ajoutez ou mettez à jour les employés de ce nouveau département."
 
 INSERT INTO Departments (department_name, department_head, location) VALUES ('Marketing', 8, 'Branch Office South');
 
-12.Créez une nouvelle table Project : project_id (INT, PK), project_name (VARCHAR), start_date (DATE), end_date (DATE), departement_id (INT, FK).
-Ajoutez des observations à cette nouvelle table, analysez la productivité des départements en IT et du nouveau département créé précédemment.
+"12.Créez une nouvelle table Project : project_id (INT, PK), project_name (VARCHAR), start_date (DATE), end_date (DATE), departement_id (INT, FK).
+Ajoutez des observations à cette nouvelle table, analysez la productivité des départements en IT et du nouveau département créé précédemment."
 
 CREATE TABLE IF NOT EXISTS Project (
     project_id INT AUTO_INCREMENT PRIMARY KEY,

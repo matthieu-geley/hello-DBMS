@@ -1,8 +1,8 @@
-1. Créez une requête permettant d’afficher les pays dont la population est supérieure à celle de "Russia".
+"1. Créez une requête permettant d’afficher les pays dont la population est supérieure à celle de "Russia"."
 
 SELECT name FROM world WHERE population > (SELECT population FROM world WHERE name = 'Russia');
 
-2. Créez une requête permettant d’afficher les pays d'Europe dont le PIB par habitant est supérieur à celui d' "Italy".
+"2. Créez une requête permettant d’afficher les pays d'Europe dont le PIB par habitant est supérieur à celui d' "Italy"."
 
 SELECT name FROM world WHERE continent = 'Europe' AND gdp/population > (SELECT gdp/population FROM world WHERE name = 'Italy');
 
