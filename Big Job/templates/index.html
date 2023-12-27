@@ -21,24 +21,24 @@
 
         <h2>Présentation de l'exercice</h2>
 
-                <h3>L'empreinte carbone (ou le contenu carbone) d'une activité humaine est une mesure des émissions de gaz à effet de serre d’origine anthropique, 
+                <p>L'empreinte carbone (ou le contenu carbone) d'une activité humaine est une mesure des émissions de gaz à effet de serre d’origine anthropique, 
                     c'est-à-dire qui peuvent lui être imputées.
                     Soucieux de l’environnement et de notre chère planète, vous avez eu l’idée d’un outil pour comprendre cette empreinte afin de la diminuer
                     et minimiser son impact.
                     Vous vous lancez dans le développement d’un calculateur d’empreinte carbone, 
-                    visant à aider à l’évaluation et à la compensation de l’empreinte carbone, en particulier dans le contexte de la production d'énergie électrique.</h3>
+                    visant à aider à l’évaluation et à la compensation de l’empreinte carbone, en particulier dans le contexte de la production d'énergie électrique.</p>
 
                 <h2>Les données</h2>
-                <h3>Les données nous permettent d'observer la consomation, en fonction de la source d'énergie, de chaque pays pour l'année de 2015.
+                <p>Les données nous permettent d'observer la consomation, en fonction de la source d'énergie, de chaque pays pour l'année de 2015.
                     On peut aussi observer la consomation, en fonction de la source d'énergie, utilisée par continent.
                     On remarque qu'un pays avec de haut taux d'émissions de charbon aura de faible taux dans les autres catégories et inversement.
-                    Cela est dû au fait que l'on utilise un pourcentage pour chaque catégorie, donc si un pays a un taux de 100% dans une catégorie, il aura 0% dans les autres.</h3>
+                    Cela est dû au fait que l'on utilise un pourcentage pour chaque catégorie, donc si un pays a un taux de 100% dans une catégorie, il aura 0% dans les autres.</p>
 
                 <h2>Un petit aperçu</h2>
                 <h3>Voici quelques unes des données présentes:</h3>
                 
-                <h2>Tableau de données des continents (table World)</h2>
-                <table border="1" cellpadding="5" cellspacing="5">
+                <h4>Tableau de données des continents (table World)</h2>
+                <table border="2" cellpadding="5" cellspacing="2">
 
                     {% for column in headers %}
                         <th>{{ column }}</th>
@@ -58,8 +58,8 @@
 
                 </table>
 
-                <h2>Tableau de données des pays (table Country)</h2>
-                <table border="1" cellpadding="5" cellspacing="5">
+                <h4>Tableau de données des pays (table Country)</h2>
+                <table border="2" cellpadding="5" cellspacing="2">
 
                     {% for column in headers %}
                         <th>{{ column }}</th>
@@ -78,33 +78,49 @@
                     {% endfor %}
                 </table>
 
-                <h2>Calcul des pourcentages de contribution des différentes sources d'énergie</h2>
-                <form action="/country" method="post">
-                    <h3 for="country_name">Pays ou continent séléctionné: {{country_name}}</h3>
-                    <label for="country">Choisissez un pays ou un continent:</label>
-                    <select name="country" id="country" method="GET" action="/">
-                        {% for row in country_data %}
-                            <option value="{{ row[0] }}">{{ row[0] }}</option>
+                <h4>Calcul des pourcentages de contribution des différentes sources d'énergie</h2>
+                <div class="Energy">
+
+                    <form class="Energy_form" action="/country" method="POST">
+                        <h3 for="country_name">Pays ou continent séléctionné: {{country_name}}</h3>
+                        <label id="Country" for="country">Choisissez un pays ou un continent:</label>
+                        <select name="country" id="country" method="GET" action="/">
+                            {% for row in country_data %}
+                                <option value="{{ row[0] }}">{{ row[0] }}</option>
+                            {% endfor %}
+                        </select>
+                        <label id="Elec">Puissance électrique consommé (en kW):</label>
+                        <textarea for="elec" name="elec">{{ elec }}</textarea>
+                        <button type="submit" class="button execute" name="submit" value="submit">Submit</button>
+                    </form>
+                    <table id="table_energy" border="2" cellpadding="5" cellspacing="2">
+
+                        <th>Source de production</th>
+                        <th>% d'ustilisation</th>
+                        <th>Médiane de gCO2/kWh</th>
+                        <th>Contribution en émission gCO2/kWh</th>
+
+                        {% for row in country_data_emit %}
+                            <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{ row[1] }}</td>
+                                <td>{{ row[2] }}</td>
+                                <td>{{ row[3] }}</td>
+                            </tr>
                         {% endfor %}
-                    </select>
-                    <button type="submit" class="button execute" name="submit" value="submit">Submit</button>
-                </form>
-                <table border="1" cellpadding="5" cellspacing="5">
+                    </table>
 
-                    <th>Source de production</th>
-                    <th>% d'ustilisation</th>
-                    <th>Médiane de gCO2/kWh</th>
-                    <th>Contribution en émission gCO2/kWh</th>
+                    <table id="table_tree" border="2" cellpadding="5" cellspacing="2">
+                        {% for row in Annual_emmit %}
+                            <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{ row[1] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                        
 
-                    {% for row in country_data_emit %}
-                        <tr>
-                            <td>{{ row[0] }}</td>
-                            <td>{{ row[1] }}</td>
-                            <td>{{ row[2] }}</td>
-                            <td>{{ row[3] }}</td>
-                        </tr>
-                    {% endfor %}
-                    
     </body>
     
     <footer>
