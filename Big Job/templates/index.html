@@ -78,8 +78,8 @@
                     {% endfor %}
                 </table>
 
-                <h4>Calcul des pourcentages de contribution des différentes sources d'énergie</h2>
-                <div class="Energy">
+            <div class="Energy">
+                <h4 class="Energy_title">Calcul des pourcentages de contribution des différentes sources d'énergie</h2>
 
                     <form class="Energy_form" action="/country" method="POST">
                         <h3 for="country_name">Pays ou continent séléctionné: {{country_name}}</h3>
@@ -89,9 +89,10 @@
                                 <option value="{{ row[0] }}">{{ row[0] }}</option>
                             {% endfor %}
                         </select>
+                        <br>
                         <label id="Elec">Puissance électrique consommé (en kW):</label>
                         <textarea for="elec" name="elec">{{ elec }}</textarea>
-                        <button type="submit" class="button execute" name="submit" value="submit">Submit</button>
+                        <button type="submit" class="button_execute" name="submit" value="submit">Submit</button>
                     </form>
                     <table id="table_energy" border="2" cellpadding="5" cellspacing="2">
 
@@ -102,7 +103,7 @@
 
                         {% for row in country_data_emit %}
                             <tr>
-                                <td>{{ row[0] }}</td>
+                                <th>{{ row[0] }}</th>
                                 <td>{{ row[1] }}</td>
                                 <td>{{ row[2] }}</td>
                                 <td>{{ row[3] }}</td>
@@ -113,12 +114,12 @@
                     <table id="table_tree" border="2" cellpadding="5" cellspacing="2">
                         {% for row in Annual_emmit %}
                             <tr>
-                                <td>{{ row[0] }}</td>
+                                <th>{{ row[0] }}</th>
                                 <td>{{ row[1] }}</td>
                             </tr>
                         {% endfor %}
                     </table>
-                </div>
+            </div>
                         
 
     </body>
