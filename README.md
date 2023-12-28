@@ -26,21 +26,31 @@ Ce projet nous permettra d'en apprendre plus sur les base de données, pourquoi 
 
 - Un Data Lake est un dépôt centralisé conçu pour stocked, traiter et sécuriser de grands volumes de données structurées, semi-structurées et non structurées. Il peut traiter tout type de données et les stocker dans leur format natif, quelle que soit leur taille.
 
+![image](https://github.com/matthieu-geley/hello-DBMS/assets/115145423/2c3dda7a-b980-4308-8b63-eef0f5356d6d)
+
 - Un Data Warehouse est une technologie qui regroup des données structurées provenant d'une ou plusieurs sources afin qu'elles puissent être comparées et analysées pour en tirer des informations utiles.
 
+![image](https://github.com/matthieu-geley/hello-DBMS/assets/115145423/9a64fc0d-cd1d-440a-af8a-b19618d66f31)
+
 - Un Lake House est une nouvelle architecture ouverte qui combine la flexibilité et l'évolutivité d'un lac de données avec les structures de données et les fonctionnalités de gestion d'un entrepôt de données.
+
+![image](https://github.com/matthieu-geley/hello-DBMS/assets/115145423/b368f8d7-5b57-413e-b1b2-2ceb4fe93cc0)
 
 ### Les SGBD
 
 - Un système de gestion de base de données (SGBD) est un logiciel système permettant aux utilisateurs et programmeurs de créer et de gérer des bases de données.
 
-- Les SGBD les plus connus sont : Oracle, MySQL, PostgreSQL, MongoDB, MariaDB, SQLite.
+- Les plus populaires:
+
+![image](https://github.com/matthieu-geley/hello-DBMS/assets/115145423/88be2dc0-62ae-4fb8-802b-55bdfddbbdf9)
+
 
 ### Les SGBDR et les non relationnels
 
 - Un système de gestion de base de données relationnelle (SGBDR) est un SGBD qui permet de stocker et de récupérer des données dans un tableau à deux dimensions appelé table selon le modèle introduit en 1960 par Edgar Frank Codd. Selon ce modèle relationnel, une base de données consiste en une ou plusieurs relations.
 
 - Une base de données non relationnelle est une base de données qui ne respecte pas le modèle relationnel, tabulaire sous forme de ligne et de colonne. Les bases de données non relationnelles sont également appelées bases de données NoSQL, Not Only SQL.
+- 
 
 ### Les clés primaires et étrangères
 
