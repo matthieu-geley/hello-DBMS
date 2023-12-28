@@ -2,7 +2,13 @@
 
 ## Introduction
 
-szaeassdsdq
+Les données sont des éléments servant de base à un raisonnement ou de point de départ à une recherche.
+A partir de données dites transformées, il est possible d’extraire de l’information primordiale pour les entreprises.
+Une donnée peut être perdue ou erronée, c’est ici qu’apparaît l’intérêt d’un système de gestion de bases de données approprié.
+Par ailleurs, les données doivent être stockées sur une base de données pour améliorer la performance de l’entreprise.
+Il est important que celles-ci soient non corrompues, propres, centralisées et accessibles.
+
+Ce projet nous permettra d'en apprendre plus sur les base de données, pourquoi ont elle été créées, comment les utiliser, les différents types de base de données, les différents langages de requêtes et de nous familiariser avec les bases de données relationnelles ainsi que leurs requêtes SQL.
 
 ## Hello veille
 
@@ -14,11 +20,11 @@ szaeassdsdq
 
 ### Critères de qualité d'une donnée
 
-- Les critères de mesure de la qualité des données sont : l'exactitude, l'exaustivité, la cohérence, la validité, l'actualité, l'intégrité, la clarté ou encore la sécurité de la donnée.
+- Les critères de mesure de la qualité des données sont : l'exactitude, l'exhaustivité, la cohérence, la validité, l'actualité, l'intégrité, la clarté ou encore la sécurité de la donnée.
 
-### Les types de dépots de données
+### Les types de dépôts de données
 
-- Un Data Lake est un dépot centralisé conçu pour stocked, traiter et sécuriser de grands volumes de données structurées, semi-structurées et non structurées. Il peut traiter tout type de données et les stocker dans leur format natif, quelle que soit leur taille.
+- Un Data Lake est un dépôt centralisé conçu pour stocked, traiter et sécuriser de grands volumes de données structurées, semi-structurées et non structurées. Il peut traiter tout type de données et les stocker dans leur format natif, quelle que soit leur taille.
 
 - Un Data Warehouse est une technologie qui regroup des données structurées provenant d'une ou plusieurs sources afin qu'elles puissent être comparées et analysées pour en tirer des informations utiles.
 
@@ -44,14 +50,51 @@ szaeassdsdq
 
 ### Les propriété ACID
 
-- ACID est un acronyme anglais pour Atomicité, Cohérence, Isolation et Durabilité. Il s'agit d'un ensemble de propriétés garantissant qu'une transaction informatique est exécutée de manière fiable. Dans le dommaine des bases de données, une opération sur les données est appelée une transaction ou une transaction informatique.
+- ACID est un acronyme anglais pour Atomicité, Cohérence, Isolation et Durabilité. Il s'agit d'un ensemble de propriétés garantissant qu'une transaction informatique est exécutée de manière fiable. Dans le domaine des bases de données, une opération sur les données est appelée une transaction ou une transaction informatique.
 
 ### MERISE et UML
 
 - MERISE est une méthode d'analyse, de conception des systèmes d'information basée sur le principe de la séparation es données et des traitements.
 
-- UML est un langage de modélisation pensé pour être un langage de modélisation commun et riche sémentiquement et syntaxiquement.
+- UML est un langage de modélisation pensé pour être un langage de modélisation commun et riche sémantiquement et syntaxiquement.
 
 ### Le langage SQL
 
 - Le Structured Query Language est un langage de programmation normalisé utilisé pour gérer et manipuler les données dans les bases de données relationnelles.
+
+# BIG JOB
+
+## Lancement de l'application Flask pour le Big Job
+
+- Pour exécuter l'application Flask qui permet l'affichage des données de base SQL sur une page web, il vous faut:
+    - Ouvrir votre IDE (logiciel de développement: VS Code, PyCharm, ...),
+    - Ouvrir le projet dans votre IDE,
+    - À l'aide de votre terminal intégré, se déplacer dans le dossier Big Job à l'aide de cette commande: 
+    ```shell
+    cd "Big Job"
+    ```
+    - Créer un environnement virtuel à l'aide de cette commande:
+    ```shell
+    python3 -m venv env
+    ```
+    - Activer votre environnement virtuel en utilisant cette commande: 
+    ```shell
+    source env/bin/activate
+    ```
+    - Installer les dépendances nécessaires:
+    ```shell
+    pip install -r requirements.txt
+    ```
+    - Ouvrir et Modifier le document "credential.json" avec vos informations de connexion à votre base de données,
+
+    - Exécuter l'application Flask:
+    ```shell
+    flask run
+    ```
+    - Ouvrer votre navigateur internet et rejoignez la page:
+
+    - - http://127.0.0.1:5000
+    
+    - ou encore:
+    
+    - - http://localhost:5000

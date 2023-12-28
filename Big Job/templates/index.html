@@ -29,8 +29,8 @@
                     visant à aider à l’évaluation et à la compensation de l’empreinte carbone, en particulier dans le contexte de la production d'énergie électrique.</p>
 
                 <h2>Les données</h2>
-                <p>Les données nous permettent d'observer la consomation, en fonction de la source d'énergie, de chaque pays pour l'année de 2015.
-                    On peut aussi observer la consomation, en fonction de la source d'énergie, utilisée par continent.
+                <p>Les données nous permettent d'observer la consommation, en fonction de la source d'énergie, de chaque pays pour l'année de 2015.
+                    On peut aussi observer la consommation, en fonction de la source d'énergie, utilisée par continent.
                     On remarque qu'un pays avec de haut taux d'émissions de charbon aura de faible taux dans les autres catégories et inversement.
                     Cela est dû au fait que l'on utilise un pourcentage pour chaque catégorie, donc si un pays a un taux de 100% dans une catégorie, il aura 0% dans les autres.</p>
 
@@ -82,7 +82,7 @@
                 <h4 class="Energy_title">Calcul des pourcentages de contribution des différentes sources d'énergie</h2>
 
                     <form class="Energy_form" action="/country" method="POST">
-                        <h3 for="country_name">Pays ou continent séléctionné: {{country_name}}</h3>
+                        <h3 for="country_name">Pays ou continent sélectionné: {{country_name}}</h3>
                         <label id="Country" for="country">Choisissez un pays ou un continent:</label>
                         <select name="country" id="country" method="GET" action="/">
                             {% for row in country_data %}
@@ -91,13 +91,13 @@
                         </select>
                         <br>
                         <label id="Elec">Puissance électrique consommé (en kW):</label>
-                        <textarea for="elec" name="elec">{{ elec }}</textarea>
+                        <input type="number" for="elec" name="elec"></input>
                         <button type="submit" class="button_execute" name="submit" value="submit">Submit</button>
                     </form>
                     <table id="table_energy" border="2" cellpadding="5" cellspacing="2">
 
                         <th>Source de production</th>
-                        <th>% d'ustilisation</th>
+                        <th>% d’utilisation</th>
                         <th>Médiane de gCO2/kWh</th>
                         <th>Contribution en émission gCO2/kWh</th>
 

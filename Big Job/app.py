@@ -121,7 +121,7 @@ def Annual_emmit(filter, elec):
     Tree = round(Annual_emmit / 25, 2)
     Yearly.extend([["Pays", filter,],
                    ["Puissance électrique consommée", f"{elec} kW",],
-                    ["Emmission annuelle", f"{Annual_emmit} KgCO2/kWh",],
+                    ["Émission annuelle", f"{Annual_emmit} KgCO2/kWh",],
                     ["Nombres d'arbres à planter", Tree,],])
     
     return Yearly
